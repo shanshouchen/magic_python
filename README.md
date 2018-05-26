@@ -39,3 +39,26 @@ Python还提供了两个函数：`reverse`,`reversed`。`reverse`是list对象�
 >>> array_1
 <listreverseiterator object at 0x7fe81cfb8cd0>
 ```
+### for ... else 语法
+```python
+for item in [0, 1, 2, 3, 4, 5]:
+    if item == 6:
+        break
+else:
+    print('item was never 6')
+```
+如果`for`正常结束，就会执行`else`代码块，如果遇到了`break`则不会再执行`else`代码块，等价于以下代码：
+```python
+hit = False
+for item in [0, 1, 2, 3, 4, 5]:
+    if item == 6:
+        hit = True
+        break
+if not hit:
+    print('item was never 6')
+```
+当然还有更简单的写法：
+```python
+if 6 not in [0, 1, 2, 3, 4, 5]:
+    print('item was never 6')
+```
