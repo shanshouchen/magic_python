@@ -78,7 +78,7 @@ m_d['a'].append(1)
 m_d['a'].append(1)
 ```
 当然，如果直接调用`dict`的`get`方法，可以通过默认值('d.get(key,default_value)')得到同样的效果
-在`collections`模块中还提供了一个`defaultdict`的工具类，这个类是`dict`的子类，功能与上面自定义dict类似
+在`collections`模块中还提供了一个`defaultdict`的工具类，这个类是`dict`的子类，`defaultdict`类的初始化函数接受一个类型作为参数，当所访问的键不存在的时候，可以实例化一个值作为默认
 ```python
 from collections import defaultdict
 
