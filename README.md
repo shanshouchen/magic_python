@@ -64,3 +64,17 @@ if not hit:
 if 6 not in [0, 1, 2, 3, 4, 5]:
     print('item was never 6')
 ```
+### __missing__方法
+在dict的子类中实现 `__missing__(self, key)`方法，如果key不在dict中，则会调用`__missing__(self, key)`方法
+```python
+class CustomDict(dict):
+    def __missing__(self, key):
+        self[key] = value = []
+        return value
+
+
+m_d = CustomDict()
+m_d['a'].append(1)
+m_d['a'].append(1)
+```
+当然，如果直接调用`dict`的`get`方法，可以通过默认值('d.get(key,default_value)')得到同样的效果
