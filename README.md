@@ -78,3 +78,18 @@ m_d['a'].append(1)
 m_d['a'].append(1)
 ```
 当然，如果直接调用`dict`的`get`方法，可以通过默认值('d.get(key,default_value)')得到同样的效果
+在`collections`模块中还提供了一个`defaultdict`的工具类，这个类是`dict`的子类，功能与上面自定义dict类似
+```python
+from collections import defaultdict
+
+dd = defaultdict(list)
+dd['aa'].append(2)
+```
+可以通过`print(dd.__missing__.__doc__)`打印出missing的文档
+```python
+__missing__(key) # Called by __getitem__ for missing key; pseudo-code:
+  if self.default_factory is None: raise KeyError((key,))
+  self[key] = value = self.default_factory()
+  return value
+```
+从文档可以看出，`__getitem__()`在访问一个不存在的键时，会调用`__missing__`取得默认值，并将该健添加到字典中去。
