@@ -100,5 +100,19 @@ a = re.compile(r"""\d +  # the integral part
                    \d *  # some fractional digits""", re.X)
 b = re.compile(r"\d+\.\d*")
 ```
+### 函数参数解包(unpacking)
+在Python中可以使用`*`和`**`解包列表和字典，这是一个非常使用的快捷操作，so，list/tuple/dict作为容器被广泛使用
+```python
 
+def fun(x, y):
+    # do something
+    pass
+
+
+param_1 = [1, 2]
+param_2 = {'x': 1, 'y': 2}
+fun(*param_1)
+fun(**param_2)
+
+```
 
