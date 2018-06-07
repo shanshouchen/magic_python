@@ -115,4 +115,37 @@ fun(*param_1)
 fun(**param_2)
 
 ```
+###条件赋值(三元表达式)
+```python
+x, y = None, 2
+x = 3 if y == 2 else 0
+```
+表达式的意义是：如果y等于2则把3赋值给x，否则把0赋值给x，if else 中的表达式可以是任意类型
+```python
+def func_1(a, b):
+    # do something
+    pass
+
+def func_2(a, b):
+    # do something
+    pass
+
+(func_1 if x == 1 else func_2)(arg_1, arg_2)
+```
+如果x等于1调用func_1，否则调用func_2
+```python
+class Class1:
+    def __init__(self, x, y):
+        pass
+
+
+class Class2:
+    def __init__(self, x, y):
+        pass
+
+
+c = (Class1 if x == 1 else Class2)(args_1, args_2)
+
+```
+当x等于1时c就是Class1的实例，否则是Class2的实例
 
