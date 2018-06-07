@@ -92,5 +92,13 @@ Python2.5 以后增加了`defaultdict`，可完成同上代码相似的功能。
 (20, 10)
 ```
 多值赋值其实就是元组打包和序列解包的组合的过程
+### 可读的正则表达式
+在Python中可以把正则表达式分割成多行写，也可以增加注释
+```python
+a = re.compile(r"""\d +  # the integral part
+                   \.    # the decimal point
+                   \d *  # some fractional digits""", re.X)
+b = re.compile(r"\d+\.\d*")
+```
 
 
